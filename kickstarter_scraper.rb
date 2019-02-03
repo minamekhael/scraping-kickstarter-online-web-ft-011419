@@ -1,8 +1,5 @@
 require 'pry'
 require 'nokogiri'
-
-# projects: kickstarter.css("li.project.grid_4")
-
  
 def create_project_hash
   html = File.read('fixtures/kickstarter.html')
@@ -19,7 +16,5 @@ def create_project_hash
       :percent_funded => project.css("ul.project-stats li.first.funded strong").text.gsub("%","").to_i
     }
   end
- 
-  # return the projects hash
   projects
 end
